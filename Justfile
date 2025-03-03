@@ -216,7 +216,7 @@ build $image="freios" $tag="latest" $flavor="main" rechunk="0" ghcr="0" pipeline
     LABELS+=("--label" "org.opencontainers.image.vendor={{ repo_organization }}")
     LABELS+=("--label" "io.artifacthub.package.deprecated=false")
     LABELS+=("--label" "io.artifacthub.package.keywords=bootc,fedora,freios,ublue,universal-blue")
-    LABELS+=("--label" "io.artifacthub.package.maintainers=[{\"name\": \"castrojo\", \"email\": \"jorge.castro@gmail.com\"}]")
+    LABELS+=("--label" "io.artifacthub.package.maintainers=[{\"name\": \"koyuawsmbrtn\", \"email\": \"me@koyu.space\"}]")
 
     echo "::endgroup::"
     echo "::group:: Build Container"
@@ -313,7 +313,7 @@ rechunk $image="freios" $tag="latest" $flavor="main" ghcr="0" pipeline="0":
         io.artifacthub.package.deprecated=false
         io.artifacthub.package.keywords=bootc,fedora,freios,ublue,universal-blue
         io.artifacthub.package.logo-url=https://avatars.githubusercontent.com/u/120078124?s=200&v=4
-        io.artifacthub.package.maintainers=[{\"name\": \"castrojo\", \"email\": \"jorge.castro@gmail.com\"}]
+        io.artifacthub.package.maintainers=[{\"name\": \"koyuawsmbrtn\", \"email\": \"me@koyu.space\"}]
         io.artifacthub.package.readme-url=https://raw.githubusercontent.com/koyuawsmbrtn/freios/refs/heads/main/README.md
         org.opencontainers.image.created=$(date -u +%Y\-%m\-%d\T%H\:%M\:%S\Z)
         org.opencontainers.image.license=Apache-2.0
