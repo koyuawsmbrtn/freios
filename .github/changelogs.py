@@ -11,7 +11,7 @@ REGISTRY = "docker://ghcr.io/freios/"
 IMAGE_MATRIX_LATEST = {
     "experience": ["base", "dx"],
     "de": ["gnome"],
-    "image_flavor": ["main", "nvidia", "hwe", "hwe-nvidia"],
+    "image_flavor": ["main", "nvidia"],
 }
 IMAGE_MATRIX = {
     "experience": ["base", "dx"],
@@ -35,7 +35,6 @@ OTHER_NAMES = {
     "dx": "### [Dev Experience Images](https://freios.koyu.space/freios-dx)\n| | Name | Previous | New |\n| --- | --- | --- | --- |{changes}\n\n",
     "gnome": "### [freiOS Images](https://freios.koyu.space/)\n| | Name | Previous | New |\n| --- | --- | --- | --- |{changes}\n\n",
     "nvidia": "### Nvidia Images\n| | Name | Previous | New |\n| --- | --- | --- | --- |{changes}\n\n",
-    "hwe": "### HWE Images\n| | Name | Previous | New |\n| --- | --- | --- | --- |{changes}\n\n",
 }
 
 COMMITS_FORMAT = "### Commits\n| Hash | Subject |\n| --- | --- |{commits}\n\n"
@@ -214,8 +213,6 @@ def get_package_groups(target: str, prev: dict[str, Any], manifests: dict[str, A
             if img not in pkg:
                 continue
 
-            if t == "hwe" and "hwe" not in image_flavor:
-                continue
             if t == "nvidia" and "nvidia" not in image_flavor:
                 continue
             if t == "gnome" and de != "gnome":

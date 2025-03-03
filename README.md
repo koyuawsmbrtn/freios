@@ -8,7 +8,6 @@
 [![GTS Images](https://github.com/koyuawsmbrtn/freios/actions/workflows/build-image-gts.yml/badge.svg)](https://github.com/koyuawsmbrtn/freios/actions/workflows/build-image-gts.yml)  
 [![Stable Images](https://github.com/koyuawsmbrtn/freios/actions/workflows/build-image-stable.yml/badge.svg)](https://github.com/koyuawsmbrtn/freios/actions/workflows/build-image-stable.yml)  
 [![Neueste Images](https://github.com/koyuawsmbrtn/freios/actions/workflows/build-image-latest-main.yml/badge.svg)](https://github.com/koyuawsmbrtn/freios/actions/workflows/build-image-latest-main.yml)  
-[![Neueste Images HWE](https://github.com/koyuawsmbrtn/freios/actions/workflows/build-image-latest-hwe.yml/badge.svg)](https://github.com/koyuawsmbrtn/freios/actions/workflows/build-image-latest-hwe.yml)  
 [![Beta Images](https://github.com/koyuawsmbrtn/freios/actions/workflows/build-image-beta.yml/badge.svg)](https://github.com/koyuawsmbrtn/freios/actions/workflows/build-image-beta.yml)  
 
 > „Evolution ist ein Prozess ständiger Verzweigung und Expansion.“ – Stephen Jay Gould  
