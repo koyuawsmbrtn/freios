@@ -10,7 +10,7 @@ HOME_URL="https://freios.koyu.space"
 DOCUMENTATION_URL="https://freios.koyu.space"
 SUPPORT_URL="https://github.com/koyuawsmbrtn/freios/issues/"
 BUG_SUPPORT_URL="https://github.com/koyuawsmbrtn/freios/issues/"
-CODE_NAME="Archaeopteryx"
+CODE_NAME="Stuttgart"
 VERSION="${VERSION:-00.00000000}"
 
 IMAGE_INFO="/usr/share/freios/image-info.json"
