@@ -150,7 +150,7 @@ build $image="freios" $tag="latest" $flavor="main" rechunk="0" ghcr="0" pipeline
 
     # Kernel Release/Pin
     if [[ -z "${kernel_pin:-}" ]]; then
-        kernel_release=$(skopeo inspect --retry-times 3 docker://ghcr.io/freios/akmods:"${akmods_flavor}"-"${fedora_version}" | jq -r '.Labels["ostree.linux"]')
+        kernel_release=$(skopeo inspect --retry-times 3 docker://ghcr.io/ublue-os/akmods:"${akmods_flavor}"-"${fedora_version}" | jq -r '.Labels["ostree.linux"]')
     else
         kernel_release="${kernel_pin}"
     fi
@@ -575,7 +575,7 @@ build-iso $image="freios" $tag="latest" $flavor="main" ghcr="0" pipeline="0":
     fi
     iso_build_args+=(IMAGE_TAG="${tag}")
     iso_build_args+=(ISO_NAME="/github/workspace/${build_dir}/${image_name}-${tag}.iso")
-    iso_build_args+=(SECURE_BOOT_KEY_URL="https://github.com/freios/akmods/raw/main/certs/public_key.der")
+    iso_build_args+=(SECURE_BOOT_KEY_URL="https://github.com/ublue-os/akmods/raw/main/certs/public_key.der")
     iso_build_args+=(VARIANT="Silverblue")
     iso_build_args+=(VERSION="${FEDORA_VERSION}")
     iso_build_args+=(WEB_UI="false")
@@ -693,8 +693,8 @@ secureboot $image="freios" $tag="latest" $flavor="main":
     ${PODMAN} rm "$TMP"
 
     # Get the Public Certificates
-    curl --retry 3 -Lo /tmp/kernel-sign.der https://github.com/freios/akmods/raw/main/certs/public_key.der
-    curl --retry 3 -Lo /tmp/akmods.der https://github.com/freios/akmods/raw/main/certs/public_key_2.der
+    curl --retry 3 -Lo /tmp/kernel-sign.der https://github.com/ublue-os/akmods/raw/main/certs/public_key.der
+    curl --retry 3 -Lo /tmp/akmods.der https://github.com/ublue-os/akmods/raw/main/certs/public_key_2.der
     openssl x509 -in /tmp/kernel-sign.der -out /tmp/kernel-sign.crt
     openssl x509 -in /tmp/akmods.der -out /tmp/akmods.crt
 
