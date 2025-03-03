@@ -1,53 +1,58 @@
-## Bluefin 
-*Deinonychus antirrhopus*
+# <picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/koyuawsmbrtn/freios/raw/assets/freios_dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://github.com/koyuawsmbrtn/freios/raw/assets/freios.svg">
+  <img alt="freiOS" src="https://github.com/koyuawsmbrtn/freios/raw/assets/freios.svg" height="34">
+</picture>
 
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/2503a44c1105456483517f793af75ee7)](https://app.codacy.com/gh/ublue-os/bluefin/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade) [![GTS Images](https://github.com/ublue-os/bluefin/actions/workflows/build-image-gts.yml/badge.svg)](https://github.com/ublue-os/bluefin/actions/workflows/build-image-gts.yml)[![Stable Images](https://github.com/ublue-os/bluefin/actions/workflows/build-image-stable.yml/badge.svg)](https://github.com/ublue-os/bluefin/actions/workflows/build-image-stable.yml)[![Latest Images](https://github.com/ublue-os/bluefin/actions/workflows/build-image-latest-main.yml/badge.svg)](https://github.com/ublue-os/bluefin/actions/workflows/build-image-latest-main.yml)[![Latest Images HWE](https://github.com/ublue-os/bluefin/actions/workflows/build-image-latest-hwe.yml/badge.svg)](https://github.com/ublue-os/bluefin/actions/workflows/build-image-latest-hwe.yml)[![Beta Images](https://github.com/ublue-os/bluefin/actions/workflows/build-image-beta.yml/badge.svg)](https://github.com/ublue-os/bluefin/actions/workflows/build-image-beta.yml)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/2503a44c1105456483517f793af75ee7)](https://app.codacy.com/gh/koyuawsmbrtn/freios/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)  
+[![GTS Images](https://github.com/koyuawsmbrtn/freios/actions/workflows/build-image-gts.yml/badge.svg)](https://github.com/koyuawsmbrtn/freios/actions/workflows/build-image-gts.yml)  
+[![Stable Images](https://github.com/koyuawsmbrtn/freios/actions/workflows/build-image-stable.yml/badge.svg)](https://github.com/koyuawsmbrtn/freios/actions/workflows/build-image-stable.yml)  
+[![Neueste Images](https://github.com/koyuawsmbrtn/freios/actions/workflows/build-image-latest-main.yml/badge.svg)](https://github.com/koyuawsmbrtn/freios/actions/workflows/build-image-latest-main.yml)  
+[![Neueste Images HWE](https://github.com/koyuawsmbrtn/freios/actions/workflows/build-image-latest-hwe.yml/badge.svg)](https://github.com/koyuawsmbrtn/freios/actions/workflows/build-image-latest-hwe.yml)  
+[![Beta Images](https://github.com/koyuawsmbrtn/freios/actions/workflows/build-image-beta.yml/badge.svg)](https://github.com/koyuawsmbrtn/freios/actions/workflows/build-image-beta.yml)  
 
-> "Evolution is a process of constant branching and expansion." - Stephen Jay Gould
+> „Evolution ist ein Prozess ständiger Verzweigung und Expansion.“ – Stephen Jay Gould  
 
-For end users it provides a system as reliable as a Chromebook with near-zero maintainance. For developers, a powerful cloud native developer workflow. Check [Introduction to Bluefin](https://docs.projectbluefin.io/introduction/) for a feature walkthrough.
+Für Endnutzer bietet freiOS ein System mit der Zuverlässigkeit eines Chromebooks und nahezu keinem Wartungsaufwand.  
+Für Entwickler ermöglicht es einen leistungsstarken, cloudnativen Entwicklungsworkflow.  
+Sieh dir die [Einführung in freiOS](https://docs.projectbluefin.io/introduction/) für eine detaillierte Funktionsübersicht an.  
 
-- [projectbluefin.io](https://projectbluefin.io/#scene-picker)
+- [freiOS Website](https://projectbluefin.io/#scene-picker)  
 
-![image](https://github.com/ublue-os/bluefin/assets/1264109/b093bdec-40dc-48d2-b8ff-fcf0df390e8c)
+## Dokumentation  
 
-## Documentation
+1. [Diskussionen und Ankündigungen](https://universal-blue.discourse.group/c/bluefin/6) – sehr empfehlenswert!  
+2. [Dokumentation](https://docs.projectbluefin.io/)  
+3. [Mitwirkungsleitfaden](https://docs.projectbluefin.io/contributing)  
 
-1. [Discussions and Announcements](https://universal-blue.discourse.group/c/bluefin/6) - strongly recommended!
-2. [Documentation](https://docs.projectbluefin.io/)
-3. [Contributing Guide](https://docs.projectbluefin.io/contributing)
+### Secure Boot  
 
-### Secure Boot
+Secure Boot wird standardmäßig unterstützt und bietet eine zusätzliche Sicherheitsebene.  
+Nach der ersten Installation wirst du aufgefordert, den Secure-Boot-Schlüssel im BIOS zu registrieren.  
 
-Secure Boot is supported by default on our systems, providing an additional layer of security. After the first installation, you will be prompted to enroll the secure boot key in the BIOS.
+Gib das Passwort `universalblue` ein, wenn du dazu aufgefordert wirst.  
 
-Enter the password `universalblue`
-when prompted to enroll our key.
+Falls dieser Schritt während der Ersteinrichtung übersprungen wird, kannst du den Schlüssel manuell mit folgendem Befehl im Terminal registrieren:  
 
-If this step is not completed during the initial setup, you can manually enroll the key by running the following command in the terminal:
-
-`
+```bash
 ujust enroll-secure-boot-key
-`
+```
 
-Secure boot is supported with our custom key. The pub key can be found in the root of the akmods repository [here](https://github.com/ublue-os/akmods/raw/main/certs/public_key.der).
-If you'd like to enroll this key prior to installation or rebase, download the key and run the following:
+Secure Boot wird mit unserem benutzerdefinierten Schlüssel unterstützt.
+Der öffentliche Schlüssel kann im Root-Verzeichnis des Akmods-Repositorys [hier](https://github.com/ublue-os/akmods/raw/main/certs/public_key.der) gefunden werden.
+Falls du den Schlüssel bereits vor der Installation oder einem Rebase registrieren möchtest, lade ihn herunter und führe folgende Befehle aus:
 
 ```bash
 sudo mokutil --timeout -1
 sudo mokutil --import public_key.der
 ```
 
-## Repobeats
-
-![Alt](https://repobeats.axiom.co/api/embed/40b85b252bf6ea25eb90539d1adcea013ccae69a.svg "Repobeats analytics image")
-
 ## Star History
 
-<a href="https://star-history.com/#ublue-os/bluefin&Date">
+<a href="https://star-history.com/#koyuawsmbrtn/freios&Date">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=ublue-os/bluefin&type=Date&theme=dark" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=ublue-os/bluefin&type=Date" />
-    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=ublue-os/bluefin&type=Date" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=koyuawsmbrtn/freios&type=Date&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=koyuawsmbrtn/freios&type=Date" />
+    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=koyuawsmbrtn/freios&type=Date" />
   </picture>
 </a>
