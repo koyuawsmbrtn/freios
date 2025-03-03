@@ -15,15 +15,9 @@
 
 Für Endnutzer bietet freiOS ein System mit der Zuverlässigkeit eines Chromebooks und nahezu keinem Wartungsaufwand.  
 Für Entwickler ermöglicht es einen leistungsstarken, cloudnativen Entwicklungsworkflow.  
-Sieh dir die [Einführung in freiOS](https://docs.projectbluefin.io/introduction/) für eine detaillierte Funktionsübersicht an.  
+Sieh dir die [Einführung in freiOS](https://freios.koyu.space/intro/) für eine detaillierte Funktionsübersicht an.  
 
-- [freiOS Website](https://projectbluefin.io/#scene-picker)  
-
-## Dokumentation  
-
-1. [Diskussionen und Ankündigungen](https://universal-blue.discourse.group/c/bluefin/6) – sehr empfehlenswert!  
-2. [Dokumentation](https://docs.projectbluefin.io/)  
-3. [Mitwirkungsleitfaden](https://docs.projectbluefin.io/contributing)  
+- [freiOS Website](https://freios.koyu.space)
 
 ### Secure Boot  
 
