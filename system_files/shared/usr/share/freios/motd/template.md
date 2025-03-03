@@ -1,4 +1,4 @@
-*# 󱍢 Willkommen bei freiOS
+# 󱍢 Willkommen bei freiOS
 
 󱋩 `%IMAGE_NAME%:%IMAGE_TAG%`
 
@@ -18,4 +18,3 @@ Wenn du `freios-cli` verwendest, gibt es ein Update. Führe `ujust freios-cli` a
 - **󰊌** [Feedback geben](https://feedback.freios.koyu.space)
 
 %KEY_WARN%
-*

@@ -6,12 +6,12 @@ set -eoux pipefail
 
 # Patched shells
 dnf5 -y swap \
---repo=copr:copr.fedorainfracloud.org:freios:staging \
+--repo=copr:copr.fedorainfracloud.org:ublue-os:staging \
     gnome-shell gnome-shell
 
 # Fix for ID in fwupd
 dnf5 -y swap \
-    --repo=copr:copr.fedorainfracloud.org:freios:staging \
+    --repo=copr:copr.fedorainfracloud.org:ublue-os:staging \
         fwupd fwupd
 
 # Switcheroo patch
