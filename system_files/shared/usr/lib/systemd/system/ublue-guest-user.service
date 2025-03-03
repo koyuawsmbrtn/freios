@@ -3,15 +3,15 @@ Description=Setup Guest User dotfiles
 After=local-fs.target
 ConditionHost=ContainerTestUblueOS
 ConditionVirtualization=yes
-ConditionPathExists=/var/home/ublue-os
+ConditionPathExists=/var/home/freios
 ConditionPathExists=!/run/ostree-booted
-ConditionPathExists=!/var/home/ublue-os/.%N.stamp
+ConditionPathExists=!/var/home/freios/.%N.stamp
 
 [Service]
-User=ublue-os
+User=freios
 Type=oneshot
-ExecStart=/usr/bin/cp -r /etc/skel/.* /var/home/ublue-os/
-ExecStart=/usr/bin/touch /var/home/ublue-os/.%N.stamp
+ExecStart=/usr/bin/cp -r /etc/skel/.* /var/home/freios/
+ExecStart=/usr/bin/touch /var/home/freios/.%N.stamp
 RemainAfterExit=yes
 
 [Install]

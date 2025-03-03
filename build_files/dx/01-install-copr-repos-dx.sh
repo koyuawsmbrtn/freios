@@ -13,11 +13,11 @@ fi
 #umoci
 dnf5 -y copr enable ganto/umoci
 
-#ublue-os staging
-dnf5 -y copr enable ublue-os/staging
+#freios staging
+dnf5 -y copr enable freios/staging
 
-#ublue-os packages
-dnf5 -y copr enable ublue-os/packages
+#freios packages
+dnf5 -y copr enable freios/packages
 
 #karmab-kcli
 dnf5 -y copr enable karmab/kcli

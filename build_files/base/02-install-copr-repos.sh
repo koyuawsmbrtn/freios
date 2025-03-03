@@ -5,10 +5,10 @@ echo "::group:: ===$(basename "$0")==="
 set -eoux pipefail
 
 # Add Staging repo
-dnf5 -y copr enable ublue-os/staging
+dnf5 -y copr enable freios/staging
 
 # Add Packages repo
-dnf5 -y copr enable ublue-os/packages
+dnf5 -y copr enable freios/packages
 
 # Add Switcheroo Repo
 dnf5 -y copr enable sentry/switcheroo-control_discrete

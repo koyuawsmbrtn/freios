@@ -14,8 +14,8 @@ set -eoux pipefail
 #    rpm-ostree override replace https://bodhi.fedoraproject.org/updates/FEDORA-2024-dd2e9fb225
 #fi
 
-# Current bluefin systems have the bling.sh and bling.fish in their default locations
-mkdir -p /usr/share/ublue-os/bluefin-cli
-cp /usr/share/ublue-os/bling/* /usr/share/ublue-os/bluefin-cli
+# Current freios systems have the bling.sh and bling.fish in their default locations
+mkdir -p /usr/share/freios/freios-cli
+cp /usr/share/freios/bling/* /usr/share/freios/freios-cli
 
 echo "::endgroup::"

@@ -33,7 +33,7 @@ ujust enroll-secure-boot-key
 ```
 
 Secure Boot wird mit unserem benutzerdefinierten Schlüssel unterstützt.
-Der öffentliche Schlüssel kann im Root-Verzeichnis des Akmods-Repositorys [hier](https://github.com/ublue-os/akmods/raw/main/certs/public_key.der) gefunden werden.
+Der öffentliche Schlüssel kann im Root-Verzeichnis des Akmods-Repositorys [hier](https://github.com/freios/akmods/raw/main/certs/public_key.der) gefunden werden.
 Falls du den Schlüssel bereits vor der Installation oder einem Rebase registrieren möchtest, lade ihn herunter und führe folgende Befehle aus:
 
 ```bash

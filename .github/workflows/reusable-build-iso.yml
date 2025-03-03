@@ -7,9 +7,9 @@ on:
         default: "['main', 'nvidia', 'nvidia-open']"
         type: string
       brand_name:
-        description: "The Brand Name: bluefin"
+        description: "The Brand Name: freios"
         required: true
-        default: bluefin
+        default: freios
         type: string
       stream_name:
         description: "The Fedora Version: gts, stable, or latest"
@@ -96,8 +96,8 @@ jobs:
           sed -i -e 's/-asus/-surface/' "${{ steps.upload-directory.outputs.iso-upload-dir}}/${surface_name}-CHECKSUM"
           tree "${{ steps.upload-directory.outputs.iso-upload-dir }}"
 
-      - name: Upload ISOs and Checksum to R2 to Bluefin Bucket
-        if: github.ref_name == 'main' && contains(matrix.base_name,'bluefin')
+      - name: Upload ISOs and Checksum to R2 to freiOS Bucket
+        if: github.ref_name == 'main' && contains(matrix.base_name,'freios')
         shell: bash
         env:
           RCLONE_CONFIG_R2_TYPE: s3
@@ -110,4 +110,4 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y rclone
-          rclone copy $SOURCE_DIR R2:bluefin
+          rclone copy $SOURCE_DIR R2:freios

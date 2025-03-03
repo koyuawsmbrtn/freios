@@ -5,7 +5,7 @@
 <policyconfig>
 
   <vendor>Universal Blue</vendor>
-  <vendor_url>https://github.com/ublue-os/</vendor_url>
+  <vendor_url>https://github.com/freios/</vendor_url>
 
   <action id="org.ublue.policykit.privileged.user.setup">
     <description>Allows certain user configuration tasks to run as root</description>

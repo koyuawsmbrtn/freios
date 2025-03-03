@@ -33,12 +33,12 @@ rm -f /etc/xdg/autostart/solaar.desktop
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/negativo17-fedora-multimedia.repo
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/tailscale.repo
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/charm.repo
-dnf5 -y copr disable ublue-os/staging
-dnf5 -y copr disable ublue-os/packages
+dnf5 -y copr disable freios/staging
+dnf5 -y copr disable freios/packages
 dnf5 -y copr disable che/nerd-fonts
 dnf5 -y copr disable phracek/PyCharm
-# NOTE: we won't use dnf5 copr plugin for ublue-os/akmods until our upstream provides the COPR standard naming
-sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_ublue-os-akmods.repo
+# NOTE: we won't use dnf5 copr plugin for freios/akmods until our upstream provides the COPR standard naming
+sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_freios-akmods.repo
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/fedora-cisco-openh264.repo
 for i in /etc/yum.repos.d/rpmfusion-*; do
     sed -i 's@enabled=1@enabled=0@g' "$i"

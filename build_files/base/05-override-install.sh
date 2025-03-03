@@ -6,12 +6,12 @@ set -eoux pipefail
 
 # Patched shells
 dnf5 -y swap \
---repo=copr:copr.fedorainfracloud.org:ublue-os:staging \
+--repo=copr:copr.fedorainfracloud.org:freios:staging \
     gnome-shell gnome-shell
 
 # Fix for ID in fwupd
 dnf5 -y swap \
-    --repo=copr:copr.fedorainfracloud.org:ublue-os:staging \
+    --repo=copr:copr.fedorainfracloud.org:freios:staging \
         fwupd fwupd
 
 # Switcheroo patch
@@ -28,20 +28,20 @@ install -c -m 0755 /tmp/starship /usr/bin
 # shellcheck disable=SC2016
 echo 'eval "$(starship init bash)"' >> /etc/bashrc
 
-# Required for bluefin faces to work without conflicting with a ton of packages
+# Required for freios faces to work without conflicting with a ton of packages
 rm -f /usr/share/pixmaps/faces/* || echo "Expected directory deletion to fail"
-mv /usr/share/pixmaps/faces/bluefin/* /usr/share/pixmaps/faces
-rm -rf /usr/share/pixmaps/faces/bluefin
+mv /usr/share/pixmaps/faces/freios/* /usr/share/pixmaps/faces
+rm -rf /usr/share/pixmaps/faces/freios
 
 # Automatic wallpaper changing by month
 HARDCODED_RPM_MONTH="12"
-sed -i "/picture-uri/ s/${HARDCODED_RPM_MONTH}/$(date +%m)/" "/usr/share/glib-2.0/schemas/zz0-bluefin-modifications.gschema.override"
+sed -i "/picture-uri/ s/${HARDCODED_RPM_MONTH}/$(date +%m)/" "/usr/share/glib-2.0/schemas/zz0-freios-modifications.gschema.override"
 glib-compile-schemas /usr/share/glib-2.0/schemas
 
-dnf5 -y swap fedora-logos bluefin-logos
+dnf5 -y swap fedora-logos freios-logos
 
 # Consolidate Just Files
-find /tmp/just -iname '*.just' -exec printf "\n\n" \; -exec cat {} \; >> /usr/share/ublue-os/just/60-custom.just
+find /tmp/just -iname '*.just' -exec printf "\n\n" \; -exec cat {} \; >> /usr/share/freios/just/60-custom.just
 
 # Register Fonts
 fc-cache -f /usr/share/fonts/ubuntu

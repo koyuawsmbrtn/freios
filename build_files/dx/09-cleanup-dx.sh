@@ -8,11 +8,11 @@ systemctl enable docker.socket
 systemctl enable podman.socket
 systemctl enable swtpm-workaround.service
 systemctl enable libvirt-workaround.service
-systemctl enable bluefin-dx-groups.service
-systemctl enable --global bluefin-dx-user-vscode.service
+systemctl enable freios-dx-groups.service
+systemctl enable --global freios-dx-user-vscode.service
 
-dnf5 -y copr disable ublue-os/staging
-dnf5 -y copr disable ublue-os/packages
+dnf5 -y copr disable freios/staging
+dnf5 -y copr disable freios/packages
 if [[ "${FEDORA_MAJOR_VERSION}" -lt "42" ]]; then
     dnf5 -y copr disable ganto/lxc4
 fi
@@ -25,8 +25,8 @@ sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/vscode.repo
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/docker-ce.repo
 dnf5 -y copr disable phracek/PyCharm
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/fedora-cisco-openh264.repo
-# NOTE: we won't use dnf5 copr plugin for ublue-os/akmods until our upstream provides the COPR standard naming
-sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_ublue-os-akmods.repo
+# NOTE: we won't use dnf5 copr plugin for freios/akmods until our upstream provides the COPR standard naming
+sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/_copr_freios-akmods.repo
 
 for i in /etc/yum.repos.d/rpmfusion-*; do
     sed -i 's@enabled=1@enabled=0@g' "$i"

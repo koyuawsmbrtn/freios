@@ -11,7 +11,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        brand_name: [bluefin]
+        brand_name: [freios]
     with:
       brand_name: ${{ matrix.brand_name }}
       stream_name: gts
