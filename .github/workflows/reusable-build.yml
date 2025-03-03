@@ -72,7 +72,7 @@ jobs:
           echo "DEFAULT_TAG=${DEFAULT_TAG}" >> $GITHUB_ENV
 
       - name: Maximize build space
-        uses: freios/remove-unwanted-software@cc0becac701cf642c8f0a6613bbdaf5dc36b259e # v9
+        uses: ublue-os/remove-unwanted-software@cc0becac701cf642c8f0a6613bbdaf5dc36b259e # v9
         with:
           remove-codeql: true
 
