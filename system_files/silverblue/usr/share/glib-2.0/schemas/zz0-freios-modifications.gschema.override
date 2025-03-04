@@ -94,6 +94,8 @@ show-power-option=false
 show-gamemode=false
 hide-forcequit=true
 show-boxbuddy=true
+custom-icon-path='/usr/share/freios/icon.svg'
+use-custom-icon=true
 
 [org.gnome.shell.extensions.search-light]
 shortcut-search=['<Super>space']

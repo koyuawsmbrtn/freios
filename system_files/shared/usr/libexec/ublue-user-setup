@@ -65,6 +65,8 @@ dconf write /org/gnome/shell/extensions/Logo-menu/show-power-option false
 dconf write /org/gnome/shell/extensions/Logo-menu/show-gamemode false
 dconf write /org/gnome/shell/extensions/Logo-menu/hide-forcequit true
 dconf write /org/gnome/shell/extensions/Logo-menu/show-boxbuddy true
+dconf write /org/gnome/shell/extensions/Logo-menu/custom-icon-path "'/usr/share/freios/icon.svg'"
+dconf write /org/gnome/shell/extensions/Logo-menu/use-custom-icon true
 
 if [[ ":Framework:" =~ ":$VEN_ID:" ]]; then
   if [[ ! -f "$UBLUE_CONFIG_DIR/framework-initialized" ]]; then

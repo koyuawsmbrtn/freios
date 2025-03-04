@@ -44,6 +44,12 @@ echo "::endgroup::"
 # Install Brew
 /ctx/build_files/base/10-brew.sh
 
+# Install AppGrid Extension
+/ctx/build_files/base/11-appgrid.sh
+
+# Fix Logomenu Extension
+/ctx/build_files/base/12-logomenu-fix.sh
+
 ## late stage changes
 
 # Make sure Bootc works
