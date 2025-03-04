@@ -33,7 +33,6 @@ rm -f /etc/xdg/autostart/solaar.desktop
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/negativo17-fedora-multimedia.repo
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/tailscale.repo
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/charm.repo
-dnf5 -y copr disable ublue-os/staging
 dnf5 -y copr disable ublue-os/packages
 dnf5 -y copr disable che/nerd-fonts
 dnf5 -y copr disable phracek/PyCharm

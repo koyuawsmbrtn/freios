@@ -11,7 +11,6 @@ systemctl enable libvirt-workaround.service
 systemctl enable freios-dx-groups.service
 systemctl enable --global freios-dx-user-vscode.service
 
-dnf5 -y copr disable ublue-os/staging
 dnf5 -y copr disable ublue-os/packages
 if [[ "${FEDORA_MAJOR_VERSION}" -lt "42" ]]; then
     dnf5 -y copr disable ganto/lxc4

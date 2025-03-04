@@ -4,16 +4,6 @@ echo "::group:: ===$(basename "$0")==="
 
 set -eoux pipefail
 
-# Patched shells
-dnf5 -y swap \
---repo=copr:copr.fedorainfracloud.org:ublue-os:staging \
-    gnome-shell gnome-shell
-
-# Fix for ID in fwupd
-dnf5 -y swap \
-    --repo=copr:copr.fedorainfracloud.org:ublue-os:staging \
-        fwupd fwupd
-
 # Switcheroo patch
 dnf5 -y swap \
     --repo=copr:copr.fedorainfracloud.org:sentry:switcheroo-control_discrete \
