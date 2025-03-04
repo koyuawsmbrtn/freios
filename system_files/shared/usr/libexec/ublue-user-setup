@@ -44,6 +44,7 @@ fi
 
 # Ensure custom icon is present
 dconf write /org/gnome/shell/extensions/Logo-menu/custom-icon-path /usr/share/freios/icon.svg
+dconf write /org/gnome/shell/extensions/Logo-menu/use-custom-icon true
 
 # Set up the default theme
 gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark' && gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
