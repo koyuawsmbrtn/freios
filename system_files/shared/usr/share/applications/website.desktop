@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Website
+Description=Öffne die Website von freiOS
+Exec=xdg-open https://freios.koyu.space
+Icon=/usr/share/ublue-os/icon.svg
+Categories=freiOS
+Type=Application

@@ -68,6 +68,13 @@ dconf write /org/gnome/shell/extensions/Logo-menu/show-boxbuddy true
 dconf write /org/gnome/shell/extensions/Logo-menu/custom-icon-path "'/usr/share/ublue-os/icon.svg'"
 dconf write /org/gnome/shell/extensions/Logo-menu/use-custom-icon true
 
+# Run terminal when Ctrl+Alt+T is pressed
+dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding "'<Primary><Alt>t'"
+dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command "'xdg-terminal-exec'"
+
+# Put website and changelogs into the app folder
+gsettings set org.gnome.shell app-folder-categories "['freiOS']"
+
 if [[ ":Framework:" =~ ":$VEN_ID:" ]]; then
   if [[ ! -f "$UBLUE_CONFIG_DIR/framework-initialized" ]]; then
     echo 'Setting Framework logo menu'
