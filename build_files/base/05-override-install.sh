@@ -28,11 +28,6 @@ install -c -m 0755 /tmp/starship /usr/bin
 # shellcheck disable=SC2016
 echo 'eval "$(starship init bash)"' >> /etc/bashrc
 
-# Required for freios faces to work without conflicting with a ton of packages
-rm -f /usr/share/pixmaps/faces/* || echo "Expected directory deletion to fail"
-mv /usr/share/pixmaps/faces/freios/* /usr/share/pixmaps/faces
-rm -rf /usr/share/pixmaps/faces/freios
-
 # Automatic wallpaper changing by month
 HARDCODED_RPM_MONTH="12"
 sed -i "/picture-uri/ s/${HARDCODED_RPM_MONTH}/$(date +%m)/" "/usr/share/glib-2.0/schemas/zz0-freios-modifications.gschema.override"
