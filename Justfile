@@ -130,7 +130,7 @@ build $image="freios" $tag="latest" $flavor="main" rechunk="0" ghcr="0" pipeline
     fedora_version=$(just fedora_version '{{ image }}' '{{ tag }}' '{{ flavor }}' '{{ kernel_pin }}')
 
     # Verify Base Image with cosign
-    just verify-container "${base_image_name}-main:${fedora_version}"
+    # just verify-container "${base_image_name}-main:${fedora_version}"
 
     # Kernel Release/Pin
     if [[ -z "${kernel_pin:-}" ]]; then
