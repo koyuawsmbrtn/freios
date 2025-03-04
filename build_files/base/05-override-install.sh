@@ -33,8 +33,6 @@ HARDCODED_RPM_MONTH="12"
 sed -i "/picture-uri/ s/${HARDCODED_RPM_MONTH}/$(date +%m)/" "/usr/share/glib-2.0/schemas/zz0-freios-modifications.gschema.override"
 glib-compile-schemas /usr/share/glib-2.0/schemas
 
-dnf5 -y swap fedora-logos freios-logos
-
 # Consolidate Just Files
 find /tmp/just -iname '*.just' -exec printf "\n\n" \; -exec cat {} \; >> /usr/share/freios/just/60-custom.just
 
