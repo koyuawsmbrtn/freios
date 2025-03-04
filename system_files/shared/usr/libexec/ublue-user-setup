@@ -73,7 +73,20 @@ dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/cus
 dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command "'xdg-terminal-exec'"
 
 # Put website and changelogs into the app folder
-gsettings set org.gnome.shell app-folder-categories "['freiOS']"
+dconf write /org/gnome/desktop/app-folders/folders/freiOS/name "'freiOS'"
+dconf write /org/gnome/desktop/app-folders/folders/freiOS/categories "['freiOS']"
+
+# Put LibreOffice into the app folder
+dconf write /org/gnome/desktop/app-folders/folders/LibreOffice/name "'LibreOffice'"
+dconf write /org/gnome/desktop/app-folders/folders/LibreOffice/apps "['org.libreoffice.LibreOffice.base.desktop', 'org.libreoffice.LibreOffice.calc.desktop', 'org.libreoffice.LibreOffice.desktop', 'org.libreoffice.LibreOffice.draw.desktop', 'org.libreoffice.LibreOffice.impress.desktop', 'org.libreoffice.LibreOffice.math.desktop', 'org.libreoffice.LibreOffice.writer.desktop', 'org.libreoffice.LibreOffice.xsltfilter.desktop']"
+
+# Put utilities and system apps into the app folder
+dconf write /org/gnome/desktop/app-folders/folders/Utilities/name "'System & Zubehör'"
+dconf write /org/gnome/desktop/app-folders/folders/Utilities/translate "false"
+dconf write /org/gnome/desktop/app-folders/folders/Utilities/apps "['org.gnome.Nautilus.desktop', 'org.gnome.Terminal.desktop', 'org.gnome.Software.desktop', 'org.gnome.Extensions.desktop', 'org.gnome.Logs.desktop', 'org.gnome.Cheese.desktop', 'org.gnome.Calculator.desktop', 'org.gnome.Calendar.desktop', 'org.gnome.Contacts.desktop', 'org.gnome.Evince.desktop', 'org.gnome.Evolution.desktop', 'org.gnome.FileRoller.desktop', 'org.gnome.FontViewer.desktop', 'org.gnome.Help.desktop', 'org.gnome.Maps.desktop', 'org.gnome.Screenshot.desktop', 'org.gnome.Todo.desktop', 'org.gnome.Weather.desktop', 'org.gnome.BrowserConnector.desktop', 'org.gnome.ColorProfileViewer.desktop', 'org.gnome.DiskUtility.desktop', 'org.gnome.Evince-previewer.desktop', 'org.gnome.Evolution-alarm-notify.desktop', 'org.gnome.evolution-data-server.OAuth2-handler.desktop', 'org.gnome.OnlineAccounts.OAuth2.desktop', 'org.gnome.Ptyxis.desktop', 'org.gnome.RemoteDesktop.Handover.desktop', 'org.gnome.Shell.desktop', 'org.gnome.Shell.Extensions.desktop', 'org.gnome.Shell.Extensions.GSConnect.desktop', 'org.gnome.Shell.Extensions.GSConnect.Preferences.desktop', 'org.gnome.Shell.PortalHelper.desktop', 'org.gnome.Tecla.desktop', 'org.gnome.Tour.desktop', 'org.gnome.tweaks.desktop', 'org.gnome.Zenity.desktop', 'solaar.desktop']"
+
+# Put them all together
+dconf write /org/gnome/desktop/app-folders/folder-children "['LibreOffice', 'freiOS', 'Utilities']"
 
 if [[ ":Framework:" =~ ":$VEN_ID:" ]]; then
   if [[ ! -f "$UBLUE_CONFIG_DIR/framework-initialized" ]]; then

@@ -2,8 +2,6 @@ app/io.github.dvlv.boxbuddyrs/x86_64/stable
 app/org.videolan.VLC/x86_64/stable
 app/org.fedoraproject.MediaWriter/x86_64/stable
 app/com.github.tchx84.Flatseal/x86_64/stable
-app/io.github.flattool.Ignition/x86_64/stable
-app/io.github.flattool.Warehouse/x86_64/stable
 app/org.gnome.baobab/x86_64/stable
 app/org.gnome.Calculator/x86_64/stable
 app/org.gnome.Calendar/x86_64/stable
@@ -34,3 +32,4 @@ app/de.schmidhuberj.DieBahn/x86_64/stable
 app/org.libreoffice.LibreOffice/x86_64/stable
 app/org.localsend.localsend_app/x86_64/stable
 app/net.codelogistics.webapps/x86_64/stable
+app/it.mijorus.gearlever/x86_64/stable
