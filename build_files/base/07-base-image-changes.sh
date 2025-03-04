@@ -31,10 +31,6 @@ if [[ "${FEDORA_MAJOR_VERSION}" -lt "41" ]]; then
 fi
 
 # Create symlinks from old to new wallpaper names for backwards compatibility
-ln -s "/usr/share/backgrounds/freios/01-freios.xml" "/usr/share/backgrounds/freios/freios-winter-dynamic.xml"
-ln -s "/usr/share/backgrounds/freios/04-freios.xml" "/usr/share/backgrounds/freios/freios-spring-dynamic.xml"
-ln -s "/usr/share/backgrounds/freios/08-freios.xml" "/usr/share/backgrounds/freios/freios-summer-dynamic.xml"
-ln -s "/usr/share/backgrounds/freios/11-freios.xml" "/usr/share/backgrounds/freios/freios-autumn-dynamic.xml"
 ln -s "/usr/share/backgrounds/xe_clouds.jxl" "/usr/share/backgrounds/xe_clouds.jpeg"
 ln -s "/usr/share/backgrounds/xe_foothills.jxl" "/usr/share/backgrounds/xe_foothills.jpeg"
 ln -s "/usr/share/backgrounds/xe_space_needle.jxl" "/usr/share/backgrounds/xe_space_needle.jpeg"
