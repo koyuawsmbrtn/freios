@@ -16,7 +16,7 @@ fi
 # Set up Firefox default configuration
 mkdir -p /var/lib/flatpak/extension/org.mozilla.firefox.systemconfig/$(arch)/stable/defaults/pref
 rm -f /var/lib/flatpak/extension/org.mozilla.firefox.systemconfig/$(arch)/stable/defaults/pref/*freios*.js
-/usr/bin/cp -rf /usr/share/freios/firefox-config/* /var/lib/flatpak/extension/org.mozilla.firefox.systemconfig/$(arch)/stable/defaults/pref/
+/usr/bin/cp -rf /usr/share/ublue-os/firefox-config/* /var/lib/flatpak/extension/org.mozilla.firefox.systemconfig/$(arch)/stable/defaults/pref/
 
 # Use until yafti rework is done
 flatpak --system update -y

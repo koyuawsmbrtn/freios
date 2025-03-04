@@ -34,7 +34,7 @@ sed -i "/picture-uri/ s/${HARDCODED_RPM_MONTH}/$(date +%m)/" "/usr/share/glib-2.
 glib-compile-schemas /usr/share/glib-2.0/schemas
 
 # Consolidate Just Files
-find /tmp/just -iname '*.just' -exec printf "\n\n" \; -exec cat {} \; >> /usr/share/freios/just/60-custom.just
+find /tmp/just -iname '*.just' -exec printf "\n\n" \; -exec cat {} \; >> /usr/share/ublue-os/just/60-custom.just
 
 # Register Fonts
 fc-cache -f /usr/share/fonts/ubuntu

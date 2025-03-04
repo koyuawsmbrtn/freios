@@ -68,7 +68,7 @@ From previous `{target}` version `{prev}` there have been the following changes.
 For current users, type the following to rebase to this version:
 ```bash
 # Get Image Name
-IMAGE_NAME=$(jq -r '.["image-name"]' < /usr/share/freios/image-info.json)
+IMAGE_NAME=$(jq -r '.["image-name"]' < /usr/share/ublue-os/image-info.json)
 
 # For this Stream
 sudo bootc switch --enforce-container-sigpolicy ghcr.io/koyuawsmbrtn/$IMAGE_NAME:{target}

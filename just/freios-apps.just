@@ -185,7 +185,7 @@ install-incus:
 install-k8s-dev-tools:
     #!/usr/bin/bash
     echo "Adding Kubernetes command line tools..."
-    brew bundle --file /usr/share/freios/homebrew/kubernetes.Brewfile
+    brew bundle --file /usr/share/ublue-os/homebrew/kubernetes.Brewfile
 
 # Set up command-not-found for Homebrew
 [group('Apps')]

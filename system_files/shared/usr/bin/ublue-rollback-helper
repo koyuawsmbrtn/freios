@@ -2,7 +2,7 @@
 
 #shellcheck disable=1091
 source /usr/lib/ujust/ujust.sh
-IMAGE_INFO="/usr/share/freios/image-info.json"
+IMAGE_INFO="/usr/share/ublue-os/image-info.json"
 IMAGE_NAME=$(jq -r '."image-name"' < $IMAGE_INFO)
 IMAGE_TAG=$(jq -r '."image-tag"' < $IMAGE_INFO)
 IMAGE_VENDOR=$(jq -r '."image-vendor"' < $IMAGE_INFO)

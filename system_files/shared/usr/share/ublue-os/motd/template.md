@@ -1,4 +1,4 @@
-# 󱍢 Willkommen bei freiOS
+# 󰓎 Willkommen bei freiOS
 
 󱋩 `%IMAGE_NAME%:%IMAGE_TAG%`
 
@@ -8,9 +8,8 @@
 | `ujust toggle-user-motd` | Dieses Banner ein-/ausschalten | 
 | `brew help` | Befehlszeilenpakete verwalten | 
 
-- **󰊤** [Probleme](https://issues.freios.koyu.space)
-- **󰈙** [Dokumentation](http://freios.koyu.space/)
-- **󰊌** [Diskutieren](https://community.freios.koyu.space/)
-- **󰊌** [Feedback geben](https://feedback.freios.koyu.space)
+Besuche https://freios.koyu.space für mehr Informationen.
+
+%TIP%
 
 %KEY_WARN%
