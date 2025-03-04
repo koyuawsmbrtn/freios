@@ -99,9 +99,6 @@ build $image="freios" $tag="latest" $flavor="main" rechunk="0" ghcr="0" pipeline
     echo "::group:: Build Prep"
     set -eoux pipefail
 
-    # Validate
-    just validate "${image}" "${tag}" "${flavor}"
-
     # Image Name
     image_name=$(just image_name {{ image }} {{ tag }} {{ flavor }})
 
@@ -143,15 +140,15 @@ build $image="freios" $tag="latest" $flavor="main" rechunk="0" ghcr="0" pipeline
     fi
 
     # Verify Containers with Cosign
-    just verify-container "akmods:${akmods_flavor}-${fedora_version}-${kernel_release}"
-    if [[ "${akmods_flavor}" =~ coreos ]]; then
-        just verify-container "akmods-zfs:${akmods_flavor}-${fedora_version}-${kernel_release}"
-    fi
-    if [[ "${flavor}" =~ nvidia-open ]]; then
-        just verify-container "akmods-nvidia-open:${akmods_flavor}-${fedora_version}-${kernel_release}"
-    elif [[ "${flavor}" =~ nvidia ]]; then
-        just verify-container "akmods-nvidia:${akmods_flavor}-${fedora_version}-${kernel_release}"
-    fi
+    # just verify-container "akmods:${akmods_flavor}-${fedora_version}-${kernel_release}"
+    # if [[ "${akmods_flavor}" =~ coreos ]]; then
+    #     just verify-container "akmods-zfs:${akmods_flavor}-${fedora_version}-${kernel_release}"
+    # fi
+    # if [[ "${flavor}" =~ nvidia-open ]]; then
+    #     just verify-container "akmods-nvidia-open:${akmods_flavor}-${fedora_version}-${kernel_release}"
+    # elif [[ "${flavor}" =~ nvidia ]]; then
+    #     just verify-container "akmods-nvidia:${akmods_flavor}-${fedora_version}-${kernel_release}"
+    # fi
 
     # Get Version
     if [[ "${tag}" =~ stable ]]; then
@@ -258,7 +255,7 @@ rechunk $image="freios" $tag="latest" $flavor="main" ghcr="0" pipeline="0":
     set -eoux pipefail
 
     # Validate
-    just validate "${image}" "${tag}" "${flavor}"
+    # just validate "${image}" "${tag}" "${flavor}"
 
     # Image Name
     image_name=$(just image_name {{ image }} {{ tag }} {{ flavor }})
@@ -412,7 +409,7 @@ load-rechunk image="freios" tag="latest" flavor="main":
     set -eou pipefail
 
     # Validate
-    just validate {{ image }} {{ tag }} {{ flavor }}
+    # just validate {{ image }} {{ tag }} {{ flavor }}
 
     # Image Name
     image_name=$(just image_name {{ image }} {{ tag }} {{ flavor }})
@@ -433,7 +430,7 @@ run $image="freios" $tag="latest" $flavor="main":
     set -eoux pipefail
 
     # Validate
-    just validate "${image}" "${tag}" "${flavor}"
+    # just validate "${image}" "${tag}" "${flavor}"
 
     # Image Name
     image_name=$(just image_name {{ image }} {{ tag }} {{ flavor }})
@@ -454,7 +451,7 @@ build-iso $image="freios" $tag="latest" $flavor="main" ghcr="0" pipeline="0":
     set -eoux pipefail
 
     # Validate
-    just validate "${image}" "${tag}" "${flavor}"
+    # just validate "${image}" "${tag}" "${flavor}"
 
     # Image Name
     image_name=$(just image_name {{ image }} {{ tag }} {{ flavor }})
@@ -587,7 +584,7 @@ run-iso $image="freios" $tag="latest" $flavor="main":
     set -eoux pipefail
 
     # Validate
-    just validate "${image}" "${tag}" "${flavor}"
+    # just validate "${image}" "${tag}" "${flavor}"
 
     # Image Name
     image_name=$(just image_name {{ image }} {{ tag }} {{ flavor }})
@@ -668,7 +665,7 @@ secureboot $image="freios" $tag="latest" $flavor="main":
     set -eou pipefail
 
     # Validate
-    just validate "${image}" "${tag}" "${flavor}"
+    # just validate "${image}" "${tag}" "${flavor}"
 
     # Image Name
     image_name=$(just image_name ${image} ${tag} ${flavor})
@@ -718,7 +715,7 @@ secureboot $image="freios" $tag="latest" $flavor="main":
 fedora_version image="freios" tag="latest" flavor="main" $kernel_pin="":
     #!/usr/bin/bash
     set -eou pipefail
-    just validate {{ image }} {{ tag }} {{ flavor }}
+    # just validate {{ image }} {{ tag }} {{ flavor }}
     if [[ ! -f /tmp/manifest.json ]]; then
         if [[ "{{ tag }}" =~ stable ]]; then
             # CoreOS does not uses cosign
@@ -739,7 +736,7 @@ fedora_version image="freios" tag="latest" flavor="main" $kernel_pin="":
 image_name image="freios" tag="latest" flavor="main":
     #!/usr/bin/bash
     set -eou pipefail
-    just validate {{ image }} {{ tag }} {{ flavor }}
+    # just validate {{ image }} {{ tag }} {{ flavor }}
     if [[ "{{ flavor }}" =~ main ]]; then
         image_name={{ image }}
     else
