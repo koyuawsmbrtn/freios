@@ -6,7 +6,7 @@ from typing import Any
 import re
 from collections import defaultdict
 
-REGISTRY = "docker://ghcr.io/freios/"
+REGISTRY = "docker://ghcr.io/koyuawsmbrtn/"
 
 IMAGE_MATRIX_LATEST = {
     "experience": ["base", "dx"],
