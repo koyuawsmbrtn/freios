@@ -59,7 +59,7 @@ dconf write /org/gnome/shell/extensions/Logo-menu/menu-button-terminal "'xdg-ter
 dconf write /org/gnome/shell/extensions/Logo-menu/menu-button-system-monitor "'flatpak run io.missioncenter.MissionCenter'"
 dconf write /org/gnome/shell/extensions/Logo-menu/menu-button-extensions-app "'com.mattjakeman.ExtensionManager.desktop'"
 dconf write /org/gnome/shell/extensions/Logo-menu/menu-button-software-center "'gnome-software'"
-dconf write /org/gnome/shell/extensions/Logo-menu/show-activities-button false
+dconf write /org/gnome/shell/extensions/Logo-menu/show-activities-button true
 dconf write /org/gnome/shell/extensions/Logo-menu/show-lockscreen false
 dconf write /org/gnome/shell/extensions/Logo-menu/show-power-option false
 dconf write /org/gnome/shell/extensions/Logo-menu/show-gamemode false
