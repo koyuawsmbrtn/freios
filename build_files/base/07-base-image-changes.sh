@@ -35,7 +35,7 @@ ln -s "/usr/share/backgrounds/xe_clouds.jxl" "/usr/share/backgrounds/xe_clouds.j
 ln -s "/usr/share/backgrounds/xe_foothills.jxl" "/usr/share/backgrounds/xe_foothills.jpeg"
 ln -s "/usr/share/backgrounds/xe_space_needle.jxl" "/usr/share/backgrounds/xe_space_needle.jpeg"
 ln -s "/usr/share/backgrounds/xe_sunset.jxl" "/usr/share/backgrounds/xe_sunset.jpeg"
-ln -s "/usr/share/backgrounds/xe_xe_koenigssee.jxl" "/usr/share/backgrounds/xe_xe_koenigssee.jpeg"
+ln -s "/usr/share/backgrounds/xe_koenigssee.jxl" "/usr/share/backgrounds/xe_koenigssee.jpeg"
 
 # Test freios gschema override for errors. If there are no errors, proceed with compiling freios gschema, which includes setting overrides.
 mkdir -p /tmp/freios-schema-test
