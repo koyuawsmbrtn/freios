@@ -52,13 +52,3 @@ Oder wenn du eine Grafikkarte von NVIDIA in deinem Computer hast:
 rpm-ostree reset
 rpm-ostree rebase ostree-unverified-registry:ghcr.io/koyuawsmbrtn/freios-nvidia:stable
 ```
-
-## Star History
-
-<a href="https://star-history.com/#koyuawsmbrtn/freios&Date">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=koyuawsmbrtn/freios&type=Date&theme=dark" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=koyuawsmbrtn/freios&type=Date" />
-    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=koyuawsmbrtn/freios&type=Date" />
-  </picture>
-</a>
