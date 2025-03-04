@@ -15,7 +15,7 @@ Sieh dir die [Einführung in freiOS](https://freios.koyu.space/intro/) für eine
 
 - [freiOS Website](https://freios.koyu.space)
 
-### Secure Boot  
+## Secure Boot  
 
 Secure Boot wird standardmäßig unterstützt und bietet eine zusätzliche Sicherheitsebene.  
 Nach der ersten Installation wirst du aufgefordert, den Secure-Boot-Schlüssel im BIOS zu registrieren.  
@@ -35,6 +35,22 @@ Falls du den Schlüssel bereits vor der Installation oder einem Rebase registrie
 ```bash
 sudo mokutil --timeout -1
 sudo mokutil --import public_key.der
+```
+
+## Das aktuelle Image rebasen
+
+Du willst von einer bestehenden Installation von Universal Blue (wie z.B. Bazzite) auf freiOS migrieren? Das ist ganz einfach!
+
+```bash
+rpm-ostree reset
+rpm-ostree rebase ostree-unverified-registry:ghcr.io/koyuawsmbrtn/freios:stable
+```
+
+Oder wenn du eine Grafikkarte von NVIDIA in deinem Computer hast:
+
+```bash
+rpm-ostree reset
+rpm-ostree rebase ostree-unverified-registry:ghcr.io/koyuawsmbrtn/freios-nvidia:stable
 ```
 
 ## Star History

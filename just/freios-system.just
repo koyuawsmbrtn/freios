@@ -19,11 +19,6 @@ benchmark:
     pushd $(mktemp -d)
     stress-ng --matrix 0 -t 1m --times
 
-# Configure freiOS-CLI Terminal Experience with Brew
-[group('System')]
-freios-cli:
-    @/usr/libexec/ublue-bling
-
 # alias for toggle-devmode
 devmode:
     @ujust toggle-devmode
