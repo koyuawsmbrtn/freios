@@ -10,7 +10,7 @@ mkdir -p /usr/share/gnome-shell/extensions/logomenu@aryan_k
 unzip /usr/share/ublue-os/logomenu.zip -d /usr/share/gnome-shell/extensions/logomenu@aryan_k
 rm -f /usr/share/ublue-os/logomenu.zip
 glib-compile-schemas /usr/share/gnome-shell/extensions/logomenu@aryan_k/schemas/
-sudo chmod -R 755 /usr/share/gnome-shell/extensions/logomenu@aryan_k
-sudo chown -R root:root /usr/share/gnome-shell/extensions/logomenu@aryan_k
+chmod -R 755 /usr/share/gnome-shell/extensions/logomenu@aryan_k
+chown -R root:root /usr/share/gnome-shell/extensions/logomenu@aryan_k
 
 echo "::endgroup::"
