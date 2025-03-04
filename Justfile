@@ -368,7 +368,7 @@ rechunk $image="freios" $tag="latest" $flavor="main" ghcr="0" pipeline="0":
         --volume "$PWD:/var/git" \
         --volume cache_ostree:/var/ostree \
         --env REPO=/var/ostree/repo \
-        --env PREV_REF=ghcr.io/freios/"${image_name}":"${tag}" \
+        --env PREV_REF=ghcr.io/koyuawsmbrtn/"${image_name}":"${tag}" \
         --env OUT_NAME="$OUT_NAME" \
         --env LABELS="${LABELS}" \
         --env "DESCRIPTION='An interpretation of the Ubuntu spirit built on Fedora technology'" \
@@ -466,8 +466,8 @@ build-iso $image="freios" $tag="latest" $flavor="main" ghcr="0" pipeline="0":
 
     # Local or Github Build
     if [[ "{{ ghcr }}" == "1" ]]; then
-        IMAGE_FULL=ghcr.io/freios/"${image_name}":"${tag}"
-        IMAGE_REPO=ghcr.io/freios
+        IMAGE_FULL=ghcr.io/koyuawsmbrtn/"${image_name}":"${tag}"
+        IMAGE_REPO=ghcr.io/koyuawsmbrtn
         ${PODMAN} pull "${IMAGE_FULL}"
     else
         IMAGE_FULL=localhost/"${image_name}":"${tag}"
@@ -627,7 +627,7 @@ changelogs branch="stable" handwritten="":
 
 # Verify Container with Cosign
 [group('Utility')]
-verify-container container="" registry="ghcr.io/freios" key="":
+verify-container container="" registry="ghcr.io/koyuawsmbrtn" key="":
     #!/usr/bin/bash
     set -eou pipefail
 

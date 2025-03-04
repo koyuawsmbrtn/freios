@@ -71,10 +71,10 @@ For current users, type the following to rebase to this version:
 IMAGE_NAME=$(jq -r '.["image-name"]' < /usr/share/freios/image-info.json)
 
 # For this Stream
-sudo bootc switch --enforce-container-sigpolicy ghcr.io/freios/$IMAGE_NAME:{target}
+sudo bootc switch --enforce-container-sigpolicy ghcr.io/koyuawsmbrtn/$IMAGE_NAME:{target}
 
 # For this Specific Image:
-sudo bootc switch --enforce-container-sigpolicy ghcr.io/freios/$IMAGE_NAME:{curr}
+sudo bootc switch --enforce-container-sigpolicy ghcr.io/koyuawsmbrtn/$IMAGE_NAME:{curr}
 ```
 
 ### Documentation
