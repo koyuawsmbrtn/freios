@@ -56,7 +56,7 @@ toggle-devmode:
             exit 0
         fi
         echo "Rebasing to a developer image"
-        NEW_IMAGE=$(sed "s/freios/freios-dx/" <<< $CURRENT_IMAGE)
+        NEW_IMAGE=$(sed "s/koyuawsmbrtn/freios-dx/" <<< $CURRENT_IMAGE)
         rpm-ostree rebase $NEW_IMAGE
         echo -e "\nUse `ujust dx-group` to add your user to the correct groups and complete the installation"
     fi
