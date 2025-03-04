@@ -49,6 +49,23 @@ dconf write /org/gnome/shell/extensions/Logo-menu/use-custom-icon true
 # Set up the default theme
 gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark' && gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 
+# Set default wallpaper
+gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/xe_koenigssee.jxl'
+
+# Set logo menu settings
+dconf write /org/gnome/shell/extensions/Logo-menu/symbolic-icon true
+dconf write /org/gnome/shell/extensions/Logo-menu/menu-button-icon-image 30
+dconf write /org/gnome/shell/extensions/Logo-menu/menu-button-terminal "'xdg-terminal-exec'"
+dconf write /org/gnome/shell/extensions/Logo-menu/menu-button-system-monitor "'flatpak run io.missioncenter.MissionCenter'"
+dconf write /org/gnome/shell/extensions/Logo-menu/menu-button-extensions-app "'com.mattjakeman.ExtensionManager.desktop'"
+dconf write /org/gnome/shell/extensions/Logo-menu/menu-button-software-center "'gnome-software'"
+dconf write /org/gnome/shell/extensions/Logo-menu/show-activities-button false
+dconf write /org/gnome/shell/extensions/Logo-menu/show-lockscreen false
+dconf write /org/gnome/shell/extensions/Logo-menu/show-power-option false
+dconf write /org/gnome/shell/extensions/Logo-menu/show-gamemode false
+dconf write /org/gnome/shell/extensions/Logo-menu/hide-forcequit true
+dconf write /org/gnome/shell/extensions/Logo-menu/show-boxbuddy true
+
 if [[ ":Framework:" =~ ":$VEN_ID:" ]]; then
   if [[ ! -f "$UBLUE_CONFIG_DIR/framework-initialized" ]]; then
     echo 'Setting Framework logo menu'
