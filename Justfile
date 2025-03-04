@@ -156,7 +156,7 @@ build $image="freios" $tag="latest" $flavor="main" rechunk="0" ghcr="0" pipeline
     else
         ver="${tag}-${fedora_version}.$(date +%Y%m%d)"
     fi
-    skopeo list-tags docker://ghcr.io/{{ repo_organization }}/${image_name} > /tmp/repotags.json
+    # skopeo list-tags docker://ghcr.io/{{ repo_organization }}/${image_name} > /tmp/repotags.json
     if [[ $(jq "any(.Tags[]; contains(\"$ver\"))" < /tmp/repotags.json) == "true" ]]; then
         POINT="1"
         while $(jq -e "any(.Tags[]; contains(\"$ver.$POINT\"))" < /tmp/repotags.json)
@@ -721,7 +721,7 @@ fedora_version image="freios" tag="latest" flavor="main" $kernel_pin="":
             # CoreOS does not uses cosign
             skopeo inspect --retry-times 3 docker://quay.io/fedora/fedora-coreos:stable > /tmp/manifest.json
         else
-            skopeo inspect --retry-times 3 docker://ghcr.io/freios/base-main:"{{ tag }}" > /tmp/manifest.json
+            skopeo inspect --retry-times 3 docker://ghcr.io/ublue-os/base-main:"{{ tag }}" > /tmp/manifest.json
         fi
     fi
     fedora_version=$(jq -r '.Labels["ostree.linux"]' < /tmp/manifest.json | grep -oP 'fc\K[0-9]+')
@@ -860,5 +860,5 @@ retag-nvidia-on-ghcr working_tag="" stream="" dry_run="1":
         skopeo="skopeo"
     fi
     for image in freios-nvidia-open freios-nvidia freios-dx-nvidia freios-dx-nvidia-open; do
-      $skopeo copy docker://ghcr.io/freios/${image}:{{ working_tag }} docker://ghcr.io/freios/${image}:{{ stream }}
+      $skopeo copy docker://ghcr.io/koyuawsmbrtn/${image}:{{ working_tag }} docker://ghcr.io/koyuawsmbrtn/${image}:{{ stream }}
     done
