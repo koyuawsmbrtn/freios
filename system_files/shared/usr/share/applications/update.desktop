@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Update
+Description=Installiere Updates für freiOS
+Exec=sh -c "ujust update && exit"
+Terminal=true
+Icon=updates
+Categories=freiOS
+Type=Application
