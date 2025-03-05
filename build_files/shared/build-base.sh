@@ -50,6 +50,12 @@ echo "::endgroup::"
 # Fix Logomenu Extension
 /ctx/build_files/base/12-logomenu-fix.sh
 
+# Add shell fixes
+/ctx/build_files/base/13-shell-fixes.sh
+
+# Add Emoji Picker Extension
+/ctx/build_files/base/14-emoji-picker.sh
+
 ## late stage changes
 
 # Make sure Bootc works
