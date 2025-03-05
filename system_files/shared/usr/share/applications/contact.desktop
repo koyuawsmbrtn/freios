@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Entwickler kontaktieren
+Description=Kontaktiere die Entwickler von freiOS
+Exec=xdg-open mailto:support@koyu.space
+Terminal=false
+Icon=mail-alert
+Categories=freiOS
+Type=Application
