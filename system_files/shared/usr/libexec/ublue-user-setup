@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 # SCRIPT VERSION
-USER_SETUP_VER=7
+USER_SETUP_VER=8
 USER_SETUP_VER_FILE="${XDG_DATA_HOME:-$HOME/.local/share}/ublue/user-setup"
 USER_SETUP_VER_RAN=$(cat "$USER_SETUP_VER_FILE")
 VEN_ID="$(cat /sys/devices/virtual/dmi/id/chassis_vendor)"
@@ -88,11 +88,19 @@ dconf write /org/gnome/desktop/app-folders/folders/Utilities/apps "['org.gnome.N
 # Put them all together
 dconf write /org/gnome/desktop/app-folders/folder-children "['LibreOffice', 'freiOS', 'Utilities']"
 
+# Set up emoji picker shortcut (Super+Alt+.)
+dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/binding "'<Super><Alt>period'"
+dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/command "'flatpak run it.mijorus.smile'"
+dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/name "'Emoji Picker'"
+dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/action "'flatpak run it.mijorus.smile'"
+dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/active true
+
 if [[ ":Framework:" =~ ":$VEN_ID:" ]]; then
   if [[ ! -f "$UBLUE_CONFIG_DIR/framework-initialized" ]]; then
     echo 'Setting Framework logo menu'
     dconf write /org/gnome/shell/extensions/Logo-menu/symbolic-icon true
     dconf write /org/gnome/shell/extensions/Logo-menu/menu-button-icon-image 31
+    dconf write /org/gnome/shell/extensions/Logo-menu/use-custom-icon false
     echo 'Setting touch scroll type'
     dconf write /org/gnome/desktop/peripherals/mouse/natural-scroll true
     if [[ $SYS_ID == "Laptop ("* ]]; then
