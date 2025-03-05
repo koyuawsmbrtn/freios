@@ -8,7 +8,7 @@ wget https://extensions.gnome.org/extension-data/smile-extensionmijorus.it.v10.s
 mkdir -p /usr/share/gnome-shell/extensions/smile-extension@mijorus.it
 unzip /usr/share/ublue-os/smile-extension.zip -d /usr/share/gnome-shell/extensions/smile-extension@mijorus.it
 rm -f /usr/share/ublue-os/smile-extension.zip
-chmown -R root:root /usr/share/gnome-shell/extensions/smile-extension@mijorus.it
+chown -R root:root /usr/share/gnome-shell/extensions/smile-extension@mijorus.it
 chmod -R 755 /usr/share/gnome-shell/extensions/smile-extension@mijorus.it
 
 echo "::endgroup::"
