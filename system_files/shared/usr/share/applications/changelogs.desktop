@@ -3,6 +3,6 @@ Name=Changelogs
 Description=Zeige die Changelogs von freiOS
 Exec=sh -c "ujust changelogs | less - && exit"
 Terminal=true
-Icon=documents
+Icon=freios-changelogs
 Categories=freiOS
 Type=Application

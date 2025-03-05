@@ -3,6 +3,6 @@ Name=Entwickler kontaktieren
 Description=Kontaktiere die Entwickler von freiOS
 Exec=xdg-open mailto:support@koyu.space
 Terminal=false
-Icon=mail-alert
+Icon=freios-mail
 Categories=freiOS
 Type=Application

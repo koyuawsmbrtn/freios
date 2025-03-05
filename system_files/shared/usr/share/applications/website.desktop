@@ -2,6 +2,6 @@
 Name=Website
 Description=Öffne die Website von freiOS
 Exec=xdg-open https://freios.koyu.space
-Icon=web
+Icon=freios-website
 Categories=freiOS
 Type=Application

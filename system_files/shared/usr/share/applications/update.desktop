@@ -3,6 +3,6 @@ Name=Update
 Description=Installiere Updates für freiOS
 Exec=sh -c "ujust update && exit"
 Terminal=true
-Icon=updates
+Icon=freios-updater
 Categories=freiOS
 Type=Application
