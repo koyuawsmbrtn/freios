@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 # SCRIPT VERSION
-USER_SETUP_VER=8
+USER_SETUP_VER=9
 USER_SETUP_VER_FILE="${XDG_DATA_HOME:-$HOME/.local/share}/ublue/user-setup"
 USER_SETUP_VER_RAN=$(cat "$USER_SETUP_VER_FILE")
 VEN_ID="$(cat /sys/devices/virtual/dmi/id/chassis_vendor)"
@@ -94,6 +94,10 @@ dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/cus
 dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/name "'Emoji Picker'"
 dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/action "'flatpak run it.mijorus.smile'"
 dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/active true
+
+# Hide KDE Connect (we got GSConnect for that)
+gnome-extensions enable app-hider@lynith.dev
+dconf write /org/gnome/shell/extensions/app-hider/hidden-apps "['org.kde.kdeconnect.app.desktop', 'org.kde.kdeconnect.daemon.desktop', 'org.kde.kdeconnect.handler.desktop', 'org.kde.kdeconnect.nonplasma.desktop', 'org.kde.kdeconnect-settings.desktop', 'org.kde.kdeconnect.sms.desktop']"
 
 if [[ ":Framework:" =~ ":$VEN_ID:" ]]; then
   if [[ ! -f "$UBLUE_CONFIG_DIR/framework-initialized" ]]; then

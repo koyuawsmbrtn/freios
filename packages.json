@@ -73,6 +73,7 @@
 				"gnome-shell-extension-caffeine",
 				"gnome-shell-extension-dash-to-dock",
 				"gnome-shell-extension-gsconnect",
+				"kdeconnectd",
 				"libgda",
 				"libgda-sqlite",
 				"libratbag-ratbagd",

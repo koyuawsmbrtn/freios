@@ -18,4 +18,12 @@ rm -f /usr/share/ublue-os/windowIsReady_Remover.zip
 chown -R root:root /usr/share/gnome-shell/extensions/windowIsReady_Remover@nunofarruca@gmail.com
 chmod -R 755 /usr/share/gnome-shell/extensions/windowIsReady_Remover@nunofarruca@gmail.com
 
+wget https://extensions.gnome.org/extension-data/app-hiderlynith.dev.v22.shell-extension.zip -O /usr/share/ublue-os/app-hiderlynith.zip
+mkdir -p /usr/share/gnome-shell/extensions/app-hider@lynith.dev
+unzip /usr/share/ublue-os/app-hiderlynith.zip -d /usr/share/gnome-shell/extensions/app-hider@lynith.dev
+rm -f /usr/share/ublue-os/app-hiderlynith.zip
+glib-compile-schemas /usr/share/gnome-shell/extensions/app-hider@lynith.dev/schemas/
+chown -R root:root /usr/share/gnome-shell/extensions/app-hider@lynith.dev
+chmod -R 755 /usr/share/gnome-shell/extensions/app-hider@lynith.dev
+
 echo "::endgroup::"
