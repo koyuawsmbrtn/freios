@@ -95,10 +95,6 @@ dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/cus
 dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/action "'flatpak run it.mijorus.smile'"
 dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/active true
 
-# Install GSConnect in userspace, otherwise it will shit itself after some time
-gnome-extensions install /usr/share/ublue-os/gsconnect.zip
-gnome-extensions enable gsconnect@andyholmes.github.io
-
 if [[ ":Framework:" =~ ":$VEN_ID:" ]]; then
   if [[ ! -f "$UBLUE_CONFIG_DIR/framework-initialized" ]]; then
     echo 'Setting Framework logo menu'
