@@ -9,9 +9,6 @@ on:
         type: choice
         options:
           - '["freios"]'
-  schedule:
-    - cron: "50 4 * * 1,2,3,4,5,6" # 4:50 UTC All But Sunday
-    - cron: "50 4 * * 0" # 4:50 UTC Sunday
 
 jobs:
   build-iso-latest:
