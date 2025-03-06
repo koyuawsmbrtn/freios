@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 # SCRIPT VERSION
-USER_SETUP_VER=11
+USER_SETUP_VER=12
 USER_SETUP_VER_FILE="${XDG_DATA_HOME:-$HOME/.local/share}/ublue/user-setup"
 USER_SETUP_VER_RAN=$(cat "$USER_SETUP_VER_FILE")
 VEN_ID="$(cat /sys/devices/virtual/dmi/id/chassis_vendor)"
@@ -94,6 +94,13 @@ dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/cus
 dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/name "'Emoji Picker'"
 dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/action "'flatpak run it.mijorus.smile'"
 dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/active true
+
+# Set up just perfection
+gnome-extensions enable just-perfection-desktop@just-perfection
+dconf write /org/gnome/shell/extensions/just-perfection/workspace false
+dconf write /org/gnome/shell/extensions/just-perfection/workspace-popup false
+dconf write /org/gnome/shell/extensions/just-perfection/workspaces-in-app-grid false
+dconf write /org/gnome/shell/extensions/just-perfection/activities-button false
 
 if [[ ":Framework:" =~ ":$VEN_ID:" ]]; then
   if [[ ! -f "$UBLUE_CONFIG_DIR/framework-initialized" ]]; then
