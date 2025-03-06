@@ -12,6 +12,8 @@ on:
     - cron: "50 4 * * 0" # 4:50 UTC Sunday
   workflow_call:
   workflow_dispatch:
+  push:
+    branches: 'main'
 
 jobs:
   build-image-latest:
