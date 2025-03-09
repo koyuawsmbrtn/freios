@@ -10,8 +10,8 @@
 > „Evolution ist ein Prozess ständiger Verzweigung und Expansion.“ – Stephen Jay Gould  
 
 Für Endnutzer bietet freiOS ein System mit der Zuverlässigkeit eines Chromebooks und nahezu keinem Wartungsaufwand.  
-Für Entwickler ermöglicht es einen leistungsstarken, cloudnativen Entwicklungsworkflow.  
-Sieh dir die [Einführung in freiOS](https://freios.koyu.space/) für eine detaillierte Funktionsübersicht an.  
+
+Für Entwickler ermöglicht es einen leistungsstarken, cloudnativen Entwicklungsworkflow.
 
 - [freiOS Website](https://freios.koyu.space)
 
