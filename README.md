@@ -1,4 +1,4 @@
-# <picture>
+<picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/koyuawsmbrtn/freios/refs/heads/main/assets/freios_dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/koyuawsmbrtn/freios/refs/heads/main/assets/freios.svg">
   <img alt="freiOS" src="https://raw.githubusercontent.com/koyuawsmbrtn/freios/refs/heads/main/assets/freios.svg">
