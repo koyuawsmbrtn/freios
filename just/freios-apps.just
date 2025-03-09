@@ -237,3 +237,42 @@ setup-brew-not-found ACTION="":
         pkexec rm -f "${FILES_TO_BE_REMOVED[@]}"
       echo "Brew command-not-found has been ${b}${red}disabled${n}"
     fi
+
+[group('Apps')]
+setup-gaming:
+    #!/usr/bin/bash
+    echo "Setting up gaming..."
+    echo "Installing Steam..."
+    flatpak install -y --system flathub com.valvesoftware.Steam
+    echo "Installing Lutris..."
+    flatpak install -y --system flathub net.lutris.Lutris
+    echo "Installing An Anime Game Launcher..."
+    flatpak remote-add --if-not-exists --user launcher.moe https://gol.launcher.moe/gol.launcher.moe.flatpakrepo
+    flatpak install -y --system org.gnome.Platform//45
+    flatpak install -y --user launcher.moe moe.launcher.an-anime-game-launcher
+    echo "Installing Minecraft Bedrock..."
+    flatpak install -y --system flathub io.mrarm.mcpelauncher
+    echo "Installing Minecraft Java (Prism Launcher)..."
+    flatpak install -y --system flathub org.prismlauncher.PrismLauncher
+    echo "Installing Playdate Mirror (also required for Playdate WebUSB)..."
+    sudo rpm-ostree install -y https://download.panic.com/mirror/Linux/Mirror-latest.rpm
+    echo "Enabling game mode..."
+    systemctl enable --now --user gamemoded
+    echo "Setting up game mode extension..."
+    gdbus call --session \
+            --dest org.gnome.Shell.Extensions \
+            --object-path /org/gnome/Shell/Extensions \
+            --method org.gnome.Shell.Extensions.InstallRemoteExtension \
+            "gamemodeshellextension@trsnaqe.com"
+    dconf write /org/gnome/shell/extensions/gamemodeshellextension/show-launch-notification false
+
+[group('Apps')]
+setup-mullvad:
+    #!/usr/bin/bash
+    echo "Setting up Mullvad VPN..."
+    echo "Installing Mullvad VPN..."
+    sudo dnf config-manager addrepo --from-repofile=https://repository.mullvad.net/rpm/stable/mullvad.repo
+    sudo rpm-ostree install -y mullvad-vpn
+    echo "Now reboot your system with 'sudo systemctl reboot' and enable the Mullvad daemon with 'sudo systemctl enable --now mullvad-daemon'"
+    echo "After rebooting, you can connect to Mullvad VPN with 'mullvad connect' or use the GUI client."
+    echo "For more information, visit https://mullvad.net/de/help/install-mullvad-app-linux#faq"
