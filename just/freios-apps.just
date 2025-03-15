@@ -256,6 +256,8 @@ setup-gaming:
     flatpak install -y --system flathub org.prismlauncher.PrismLauncher
     echo "Installing Playdate Mirror (also required for Playdate WebUSB)..."
     sudo rpm-ostree install -y https://download.panic.com/mirror/Linux/Mirror-latest.rpm
+    echo "Installing Cartridges..."
+    flatpak install -y --system flathub page.kramo.Cartridges
     echo "Enabling game mode..."
     systemctl enable --now --user gamemoded
     echo "Setting up game mode extension..."
