@@ -54,4 +54,7 @@ cp /usr/share/plymouth/themes/spinner/{silverblue-,}watermark.png
 # Disable NetworkManager-wait-online.service
 systemctl mask NetworkManager-wait-online.service
 
+# Disable systemd-udev-settle.service
+systemctl mask systemd-udev-settle.service
+
 echo "::endgroup::"
