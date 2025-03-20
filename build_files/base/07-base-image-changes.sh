@@ -51,4 +51,7 @@ glib-compile-schemas /usr/share/glib-2.0/schemas &>/dev/null
 # Watermark for Plymouth
 cp /usr/share/plymouth/themes/spinner/{silverblue-,}watermark.png
 
+# Disable NetworkManager-wait-online.service
+systemctl mask NetworkManager-wait-online.service
+
 echo "::endgroup::"
