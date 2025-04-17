@@ -1,5 +1,5 @@
 repo_organization := "koyuawsmbrtn"
-rechunker_image := "ghcr.io/hhd-dev/rechunk:v1.0.1"
+rechunker_image := "ghcr.io/hhd-dev/rechunk:v1.2.1"
 iso_builder_image := "ghcr.io/jasonn3/build-container-installer:v1.2.3"
 images := '(
     [freios]=freios
@@ -118,7 +118,7 @@ build $image="freios" $tag="latest" $flavor="main" rechunk="0" ghcr="0" pipeline
     elif [[ "${tag}" =~ gts|stable ]]; then
         akmods_flavor="coreos-stable"
     elif [[ "${tag}" =~ beta ]]; then
-        akmods_flavor="coreos-testing"
+        akmods_flavor="main"
     else
         akmods_flavor="main"
     fi
@@ -544,9 +544,12 @@ build-iso $image="freios" $tag="latest" $flavor="main" ghcr="0" pipeline="0":
     iso_build_args=()
     iso_build_args+=("--rm" "--privileged" "--pull=${PULL_POLICY}")
     if [[ "{{ ghcr }}" == "0" ]]; then
-    	iso_build_args+=(--volume "/var/lib/containers/storage:/var/lib/containers/storage")
+    	iso_build_args+=(
+            "--security-opt=label=disable"
+            "--volume=/var/lib/containers/storage:/var/lib/containers/storage"
+        )
     fi
-    iso_build_args+=(--volume "${PWD}:/github/workspace/")
+    iso_build_args+=("--volume=${PWD}:/github/workspace/")
     iso_build_args+=("{{ iso_builder_image }}")
     iso_build_args+=(ARCH="x86_64")
     iso_build_args+=(ENROLLMENT_PASSWORD="universalblue")
@@ -614,9 +617,8 @@ run-iso $image="freios" $tag="latest" $flavor="main":
     run_args+=(--device=/dev/kvm)
     run_args+=(--volume "${PWD}/${image_name}_build/${image_name}-${tag}.iso":"/boot.iso")
     run_args+=(docker.io/qemux/qemu-docker)
-    ${PODMAN} run "${run_args[@]}" &
-    xdg-open http://localhost:${port}
-    fg "%podman" || fg "%docker"
+    xdg-open http://localhost:${port} &
+    ${PODMAN} run "${run_args[@]}"
 
 # Test Changelogs
 [group('Changelogs')]

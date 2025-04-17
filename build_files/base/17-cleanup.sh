@@ -9,9 +9,6 @@ systemctl enable rpm-ostree-countme.service
 systemctl enable tailscaled.service
 systemctl enable dconf-update.service
 systemctl --global enable ublue-flatpak-manager.service
-systemctl enable rpm-ostreed-automatic.timer
-systemctl enable flatpak-system-update.timer
-systemctl --global enable flatpak-user-update.timer
 systemctl enable ublue-system-setup.service
 systemctl enable ublue-guest-user.service
 systemctl enable brew-setup.service
@@ -21,13 +18,21 @@ systemctl --global enable ublue-user-setup.service
 systemctl --global enable podman-auto-update.timer
 systemctl enable check-sb-key.service
 
-# Hide Desktop Files. Hidden removes mime associations
-sed -i 's@\[Desktop Entry\]@\[Desktop Entry\]\nHidden=true@g' /usr/share/applications/fish.desktop
-sed -i 's@\[Desktop Entry\]@\[Desktop Entry\]\nHidden=true@g' /usr/share/applications/htop.desktop
-sed -i 's@\[Desktop Entry\]@\[Desktop Entry\]\nHidden=true@g' /usr/share/applications/nvtop.desktop
+# Updater
+if systemctl cat -- uupd.timer &> /dev/null; then
+    systemctl enable uupd.timer
+else
+    systemctl enable rpm-ostreed-automatic.timer
+    systemctl enable flatpak-system-update.timer
+    systemctl --global enable flatpak-user-update.timer
+fi
 
-#Disable autostart behaviour
-rm -f /etc/xdg/autostart/solaar.desktop
+# Hide Desktop Files. Hidden removes mime associations
+for file in fish htop nvtop; do
+    if [[ -f "/usr/share/applications/$file.desktop" ]]; then
+        sed -i 's@\[Desktop Entry\]@\[Desktop Entry\]\nHidden=true@g' /usr/share/applications/"$file".desktop
+    fi
+done
 
 # Disable all COPRs and RPM Fusion Repos
 sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/negativo17-fedora-multimedia.repo

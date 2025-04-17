@@ -2,10 +2,13 @@
 
 set -eoux pipefail
 
+mkdir -p /var/roothome
+
 echo "::group:: ===Install dnf5==="
 if [ "${FEDORA_MAJOR_VERSION}" -lt 41 ]; then
     rpm-ostree install --idempotent dnf5 dnf5-plugins
 fi
+
 echo "::endgroup::"
 
 echo "::group:: Copy Files"

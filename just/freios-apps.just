@@ -132,7 +132,6 @@ install-jetbrains-toolbox:
 incus:
     @ujust install-incus
 
-
 # Install OpenTabletDriver, an open source, cross-platform, user-mode tablet driver
 [group('Apps')]
 install-opentabletdriver:
@@ -164,7 +163,6 @@ install-opentabletdriver:
     else
         echo "Have a good day :)!"
     fi
-
 
 # Install and configure Incus
 [group('Apps')]
@@ -278,3 +276,22 @@ setup-mullvad:
     echo "Now reboot your system with 'sudo systemctl reboot' and enable the Mullvad daemon with 'sudo systemctl enable --now mullvad-daemon'"
     echo "After rebooting, you can connect to Mullvad VPN with 'mullvad connect' or use the GUI client."
     echo "For more information, visit https://mullvad.net/de/help/install-mullvad-app-linux#faq"
+# Install gaming flatpaks
+# 23.08 runtime versions are needed for Heroic/Lutris
+[group('Apps')]
+install-gaming-flatpaks:
+    #!/usr/bin/env bash
+    flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+    flatpak --system -y install --or-update app/com.valvesoftware.Steam/x86_64/stable \
+                                            app/com.heroicgameslauncher.hgl/x86_64/stable \
+                                            app/net.lutris.Lutris/x86_64/stable \
+                                            app/com.vysp3r.ProtonPlus/x86_64/stable \
+                                            app/com.dec05eba.gpu_screen_recorder/x86_64/stable \
+                                            app/com.github.Matoking.protontricks/x86_64/stable \
+                                            runtime/org.freedesktop.Platform.VulkanLayer.gamescope/x86_64/24.08 \
+                                            runtime/org.freedesktop.Platform.VulkanLayer.gamescope/x86_64/23.08 \
+                                            runtime/org.freedesktop.Platform.VulkanLayer.OBSVkCapture/x86_64/24.08 \
+                                            runtime/com.obsproject.Studio.Plugin.OBSVkCapture/x86_64/stable \
+                                            runtime/org.freedesktop.Platform.VulkanLayer.MangoHud/x86_64/24.08 \
+                                            runtime/org.freedesktop.Platform.VulkanLayer.MangoHud/x86_64/23.08 \
+                                            runtime/com.valvesoftware.Steam.Utility.steamtinkerlaunch/x86_64/stable

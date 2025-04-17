@@ -11,11 +11,9 @@
 				"ddcutil",
 				"evince",
 				"evtest",
-				"epson-inkjet-printer-escpr",
-				"epson-inkjet-printer-escpr2",
 				"fastfetch",
-				"fish",
 				"firewall-config",
+				"fish",
 				"foo2zjs",
 				"fuse-encfs",
 				"gcc",
@@ -74,12 +72,39 @@
 				"gnome-shell-extension-dash-to-dock",
 				"libgda",
 				"libgda-sqlite",
+				"libimobiledevice",
 				"libratbag-ratbagd",
 				"openssh-askpass",
-				"simple-scan",
+				"powertop",
+				"printer-driver-brlaser",
+				"pulseaudio-utils",
+				"python3-pip",
+				"python3-pygit2",
+				"rclone",
+				"restic",
+				"samba",
+				"samba-dcerpc",
+				"samba-ldb-ldap-modules",
+				"samba-winbind-clients",
+				"samba-winbind-modules",
+				"setools-console",
+				"sssd-ad",
+				"sssd-krb5",
+				"sssd-nfs-idmap",
+				"tailscale",
+				"tmux",
+				"ublue-bling",
+				"ublue-brew",
+				"ublue-fastfetch",
+				"ublue-motd",
+				"uld",
+				"usbmuxd",
+				"wireguard-tools",
+				"wl-clipboard",
+				"xprop",
 				"yaru-theme",
-				"zenity"
-				
+				"zenity",
+				"zsh"
 			],
 			"dx": [
 				"adobe-source-code-pro-fonts",
@@ -158,13 +183,11 @@
 			"all": [
 				"firefox-langpacks",
 				"firefox",
-				"podman-docker"
-			],
-			"silverblue": [
 				"gnome-extensions-app",
 				"gnome-shell-extension-background-logo",
 				"gnome-software-rpm-ostree",
-				"gnome-terminal-nautilus"
+				"gnome-terminal-nautilus",
+				"podman-docker"
 			],
 			"dx": []
 		}
@@ -172,30 +195,53 @@
 	"40": {
 		"include": {
 			"all": [
+				"epson-inkjet-printer-escpr",
+				"epson-inkjet-printer-escpr2",
 				"ptyxis"
 			],
-			"silverblue": [],
 			"dx": [
+				"docker-buildx-plugin",
+				"docker-ce",
+				"docker-ce-cli",
+				"docker-compose-plugin",
 				"lxd-agent",
 				"lxd"
 			]
 		},
 		"exclude": {
 			"all": [],
-			"silverblue": [],
 			"dx": []
 		}
 	},
 	"41": {
 		"include": {
 			"all": [
+				"epson-inkjet-printer-escpr",
+				"epson-inkjet-printer-escpr2",
 				"google-noto-fonts-all"
 			],
-			"silverblue": []
+			"dx": [
+				"docker-buildx-plugin",
+				"docker-ce",
+				"docker-ce-cli",
+				"docker-compose-plugin"
+			]
 		},
 		"exclude": {
 			"all": [],
-			"silverblue": [],
+			"dx": []
+		}
+	},
+	"42": {
+		"include": {
+			"all": [
+        "google-noto-fonts-all",
+        "uupd"
+      ],
+			"dx": []
+		},
+		"exclude": {
+			"all": [],
 			"dx": []
 		}
 	}
