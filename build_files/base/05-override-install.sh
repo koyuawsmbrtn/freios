@@ -8,9 +8,6 @@ set -eoux pipefail
 if [[ "$(rpm -E %fedora)" -eq "40" ]]; then
     dnf5 -y copr enable sentry/switcheroo-control_discrete
     dnf5 -y copr disable sentry/switcheroo-control_discrete
-    dnf5 -y swap \
-        --repo copr:copr.fedorainfracloud.org:ublue-os:staging \
-        gnome-shell gnome-shell
     dnf5 versionlock add gnome-shell
     dnf5 -y swap \
         --repo=copr:copr.fedorainfracloud.org:sentry:switcheroo-control_discrete \
@@ -27,13 +24,6 @@ elif [[ "$(rpm -E %fedora)" -eq "41" ]]; then
         --repo="terra*" \
         switcheroo-control switcheroo-control
     dnf5 versionlock add switcheroo-control
-fi
-
-if [[ "${UBLUE_IMAGE_TAG}" != "beta" ]]; then
-    # Fix for ID in fwupd
-    dnf5 -y swap \
-        --repo=copr:copr.fedorainfracloud.org:ublue-os:staging \
-        fwupd fwupd
 fi
 
 # Starship Shell Prompt
